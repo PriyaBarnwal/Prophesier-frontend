@@ -1,0 +1,120 @@
+body {
+  font-family: Roboto, sans-serif;
+  background-image: url(../assets/bg1.jpeg);
+  /* background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTC_utlYcBZuDpdaa5W3njPkpS_eUVsvsSwTw&usqp=CAU); */
+  /* background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqqKrVdCuX8v4i1SX2Orj3rOIf4QOIi2M82H4JpJHBawpq-LLTYANb57p53Bh0_tlumC8&usqp=CAU); */
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  color: #757575;
+  margin: 0px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.imageslist {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.delete {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  opacity: 0.8;
+}
+
+.delete svg {
+  filter: drop-shadow(1px 1px 1px #999);
+  font-size: 1.7rem;
+}
+
+.High {
+  color: green
+}
+.Medium {
+  color: coral
+}
+.Low {
+  color: red
+}
+
+input[type=file] { 
+  visibility: hidden;
+  position: absolute
+}
+
+.image-tile {
+  max-height: 420px;
+  max-width: 420px;
+  padding: 10px;
+  border: 1px dashed #999;
+}
+
+/* Loading */
+.loading-wrapper, .loading {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  flex-direction: column;
+}
+
+.loading {
+  width: 200px;
+  height: 200px;
+}
+
+.root .delete {
+  visibility: hidden;
+}
+.root:hover .delete {
+  visibility: visible;
+}
+
+.root {
+  width: 380px;
+}
+.media {
+  height: 283px;
+  margin-top: 10px;
+}
+
+.box {
+  padding: 30px;
+  /* background-color: #a8b2f3 !important; */
+}
+.emoji-mart{
+  position: absolute;
+  width: 280px;
+  top: 6.5rem;
+  left: 14rem;
+  z-index: 1;
+}
+
+.load-account {
+  position: absolute;
+  height: 20px !important;
+  width: 20px !important;
+  right: 0;
+  top: 10px;
+}
+.side-button {
+  border-radius: 0 !important;
+  color: white !important;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+}
+
+.image-drop-title {
+  margin: 15px;
+  font-size: 12px;
+}
