@@ -26,7 +26,8 @@ export const predictEngagement = (formData) => async(dispatch) => {
     let scores = []
     res.data.map((score, index) => {
         scores.push({
-            score: score[0],
+            score: score[0]/20000,
+            numLikes: score[0],
             name: formData.media[index].name
         })
     })

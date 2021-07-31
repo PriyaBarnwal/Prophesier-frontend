@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import { Paper, IconButton } from '@material-ui/core';
 import CardItem from './CardItem'
+import AnimatedCounter from './AnimatedCounter'
 import GaugeChart from 'react-gauge-chart'
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos'
@@ -42,7 +43,7 @@ const ScoreItems = ({scores, caption, images}) => {
       <IconButton onClick={rightArrowClicked} style={{visibility: rightArrowVisible ? 'visible': 'hidden', position: 'absolute', top: '45%', right: -5}}><ArrowForwardIosIcon fontSize="large" /></IconButton>
       <div style={{display: 'flex', flexDirection: 'column', padding: '0 20px', justifyContent: 'space-between'}}>
           {updatedScores.map((score, index) => (
-              <Paper key={index} className="images" style={{display: 'flex', marginTop: index%2===0? 0: '15px'}} elevation={3}>
+              <Paper key={score.name} className="images" style={{display: 'flex', marginTop: index%2===0? 0: '15px'}} elevation={3}>
                 <CardItem image={images[score.name].data_url} caption={caption} view={'score'}/>
                 <div style={{margin: '0 auto'}}>
                   <div style={{display: 'flex', justifyContent: 'center'}}>
@@ -50,15 +51,18 @@ const ScoreItems = ({scores, caption, images}) => {
                     <h3 style={{marginLeft: '15px'}} className={score.category}>{score.category}</h3>
                   </div>
                   <GaugeChart id="gauge-chart5"
-                    style={{height: 160, width: 350, marginTop: '30px'}}
+                    key={score.name}
+                    style={{height: 160, width: 350, marginTop: '20px'}}
                     textColor="#000"
                     nrOfLevels={40}
-                    colors={['#EA4228', '#F5CD19','#5BE12C']}
+                    colors={['#8794e8','#CF9FFF', '#FFB6C1']}
                     needleColor="#a8b2f3"
                     needleBaseColor="#a8b2f3"
                     percent={score.score}
                     arcPadding={0.01}
+                    formatTextValue={(value)=>value.toFixed(0)/100}
                   />
+                  <AnimatedCounter key={score.name} likes={score.numLikes.toFixed(0)}/>
                 </div>
               </Paper>
             ))

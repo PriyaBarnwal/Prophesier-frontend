@@ -1,5 +1,5 @@
 import React, {Fragment} from 'react';
-import { Grid, LinearProgress, Backdrop } from '@material-ui/core';
+import { Grid, LinearProgress, Backdrop, CircularProgress } from '@material-ui/core';
 import { connect } from 'react-redux'
 import CardItem from '../Components/CardItem';
 import ScoreItems from '../Components/ScoreItems';
@@ -28,9 +28,9 @@ const MainPanel= ({images, post, scores, removeImage, loading}) => {
   let image_keys = Object.keys(images)
   return  (
     <Fragment>
-      <Backdrop style={{zIndex: 101, color: '#fff'}} open={loading}/>
+      <Backdrop style={{zIndex: 101, color: '#fff'}} open={loading}><CircularProgress thickness={4} size={50} /></Backdrop>
       <Grid item container xs={8} direction="column" style={{position: 'relative'}}>
-      {loading === true ? (<div style={{width: '100%', marginBottom: '10px'}}><LinearProgress /></div>): null}
+      {/* {loading === true ? (<div style={{width: '100%', marginBottom: '10px'}}><LinearProgress /></div>): null} */}
       <div elevation={3} style={{background: scores.length > 0? 'transparent': 'white', minHeight: '700px'}}>
       {scores.length === 0?
         (
