@@ -60,7 +60,7 @@ const ScoreItems = ({scores, caption, images}) => {
                     needleBaseColor="#a8b2f3"
                     percent={score.score}
                     arcPadding={0.01}
-                    formatTextValue={(value)=>value.toFixed(0)/100}
+                    
                   />
                   <AnimatedCounter key={score.name} likes={score.numLikes.toFixed(0)}/>
                 </div>

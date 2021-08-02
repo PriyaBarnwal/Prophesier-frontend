@@ -37,13 +37,13 @@ const Form = ({formStoreValues, loading, updatePost, error, loadAccount}) => {
       let data = await loadAccount(formValues)
       data && setFormValues({
         ...formValues,
-        nfollowers: data.nfollowers_count, profile_url: data.profile_picture_url
+        nfollowers: data.followers_count, profile_url: data.profile_picture_url
       })
     }
   }
 
   const onKeyUp = (event) => {
-    if (event.which === 13 || event.key == 'enter') {
+    if (event.which === 13 || event.key === 'enter') {
     event.preventDefault()
     handleAccountChange(event)
     }

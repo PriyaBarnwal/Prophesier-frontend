@@ -5,7 +5,7 @@ const AnimatedCounter = ({likes}) => {
     let duration = 2;
     useEffect(() => {
         let start = 0;
-        const end = parseInt(String(likes).substring(0,3))
+        const end = parseInt(String(likes).substring(0,2))
         if (start === end) return;
     
         let total = parseInt(duration);
@@ -13,7 +13,7 @@ const AnimatedCounter = ({likes}) => {
     
         let timer = setInterval(() => {
           start += 1;
-          setCount(String(start) + String(likes).substring(3))
+          setCount(String(start) + String(likes).substring(2))
           if (start === end) clearInterval(timer)       
         }, incrementTime);
       }, [likes, duration]);
